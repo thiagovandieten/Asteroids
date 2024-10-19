@@ -37,6 +37,11 @@ def main():
             obj.update(dt)
         # player.update(dt)
 
+        for asteroid in asteroids:
+            if asteroid.check_collision(player):
+                print("Game over!")
+                return
+
         screen.fill(pygame.Color(0,0,0))
         for obj in drawable:
             obj.draw(screen)
